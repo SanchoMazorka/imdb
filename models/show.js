@@ -10,11 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Show.belongsTo(models.Season);
     }
   }
   Show.init({
-    id: DataTypes.UUID,
     title: DataTypes.TEXT,
     year: DataTypes.INTEGER,
     country: DataTypes.TEXT

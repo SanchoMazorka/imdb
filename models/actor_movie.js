@@ -14,12 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Actor_movie.init({
-    movieId: DataTypes.UUID,
-    actorId: DataTypes.UUID
+    movieId: DataTypes.INTEGER,
+    actorId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Actor_movie',
-		timestamps: false,
   });
   return Actor_movie;
 };

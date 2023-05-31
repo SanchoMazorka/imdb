@@ -14,12 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Chapter.init({
-    id: DataTypes.UUID,
     title: DataTypes.TEXT,
-    directorId: DataTypes.UUID,
+    directorId: DataTypes.INTEGER,
     chapterNumber: DataTypes.INTEGER,
-    release: DataTypes.DATE,
-    seasonId: DataTypes.UUID
+    date: DataTypes.DATE,
+    seasonId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Chapter',

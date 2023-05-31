@@ -2,30 +2,34 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Actor_chapters', {
+    await queryInterface.createTable('Shows', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      chapterId: {
-        type: Sequelize.UUID
+      title: {
+				allowNull: false,
+        type: Sequelize.TEXT
       },
-      actorId: {
-        type: Sequelize.UUID
+      year: {
+        type: Sequelize.INTEGER
       },
-/*       createdAt: {
+      country: {
+        type: Sequelize.TEXT
+      },
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      } */
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Actor_chapters');
+    await queryInterface.dropTable('Shows');
   }
 };

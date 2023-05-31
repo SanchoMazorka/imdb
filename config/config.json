@@ -4,7 +4,7 @@
     "password": null,
     "database": "imdb",
     "host": "localhost",
-    "dialect": "mariadb"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

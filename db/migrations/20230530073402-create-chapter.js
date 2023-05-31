@@ -2,18 +2,31 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Genres', {
+    await queryInterface.createTable('Chapters', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.UUID
-      },
-      name: {
+      title: {
+				allowNull: false,
         type: Sequelize.TEXT
+      },
+      directorId: {
+				allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      chapterNumber: {
+				allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      date: {
+        type: Sequelize.DATE
+      },
+      seasonId: {
+				allowNull: false,
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -26,6 +39,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Genres');
+    await queryInterface.dropTable('Chapters');
   }
 };

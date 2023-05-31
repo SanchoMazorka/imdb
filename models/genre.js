@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Genre.init({
-    id: DataTypes.UUID,
     name: DataTypes.TEXT
   }, {
     sequelize,

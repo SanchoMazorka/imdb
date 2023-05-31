@@ -2,30 +2,30 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Genre_movies', {
+    await queryInterface.createTable('Genre_chapters', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      movieId: {
-        type: Sequelize.UUID
+      chapterId: {
+        type: Sequelize.INTEGER
       },
       genreId: {
-        type: Sequelize.UUID
+        type: Sequelize.INTEGER
       },
-/*       createdAt: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      } */
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Genre_movies');
+    await queryInterface.dropTable('Genre_chapters');
   }
 };

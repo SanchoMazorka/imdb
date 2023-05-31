@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Actor.init({
-    id: DataTypes.UUID,
     firstName: DataTypes.TEXT,
     lastName: DataTypes.TEXT,
     gender: DataTypes.TEXT,

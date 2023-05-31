@@ -14,12 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Genre_chapter.init({
-    chapterId: DataTypes.UUID,
-    genreId: DataTypes.UUID
+    chapterId: DataTypes.INTEGER,
+    genreId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Genre_chapter',
-		timestamps: false,
   });
   return Genre_chapter;
 };

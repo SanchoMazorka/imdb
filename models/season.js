@@ -14,10 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Season.init({
-    id: DataTypes.UUID,
     title: DataTypes.TEXT,
     seasonNumber: DataTypes.INTEGER,
-    showId: DataTypes.UUID
+    showId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Season',

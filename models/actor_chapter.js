@@ -14,12 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Actor_chapter.init({
-    chapterId: DataTypes.UUID,
-    actorId: DataTypes.UUID
+    chapterId: DataTypes.INTEGER,
+    actorId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Actor_chapter',
-		timestamps: false,
   });
   return Actor_chapter;
 };

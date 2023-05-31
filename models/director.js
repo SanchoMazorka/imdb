@@ -10,11 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+			Director.hasMany(models.Movie);
     }
   }
   Director.init({
-    id: DataTypes.UUID,
     firstName: DataTypes.TEXT,
     lastName: DataTypes.TEXT
   }, {

@@ -2,18 +2,20 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Shows', {
+    await queryInterface.createTable('Movies', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.UUID
-      },
       title: {
+				allowNull: false,
         type: Sequelize.TEXT
+      },
+      directorId: {
+				allowNull: false,
+        type: Sequelize.INTEGER
       },
       year: {
         type: Sequelize.INTEGER
@@ -32,6 +34,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Shows');
+    await queryInterface.dropTable('Movies');
   }
 };
