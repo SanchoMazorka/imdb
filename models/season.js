@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+			Season.hasMany(models.Chapter, {foreignKey: 'seasonId'});
+      //Season.belongsTo(models.Show);
     }
   }
   Season.init({
@@ -20,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Season',
+		timestamps: false
   });
   return Season;
 };

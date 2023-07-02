@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
 			Director.hasMany(models.Movie);
+			//Director.hasMany(models.Chapter);
     }
   }
   Director.init({
@@ -19,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Director',
+		timestamps: false
   });
   return Director;
 };

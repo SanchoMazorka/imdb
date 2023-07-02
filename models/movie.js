@@ -10,9 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-			Movie.belongsTo(models.Director);
-			//Movie.belongsToMany(models.Genre, {through: models.Genre_Movie});
-			//Movie.belongsToMany(models.Actor, {through: models.Actor_Movie});
+			Movie.belongsTo(models.Director, {foreignKey: 'directorId'});
+			Movie.belongsToMany(models.Genre, {through: models.Genre_movie, foreignKey: 'movieId'});
+			Movie.belongsToMany(models.Actor, {through: models.Actor_movie, foreignKey: 'movieId'});
     }
   }
   Movie.init({
@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Movie',
+		timestamps: false,
   });
   return Movie;
 };

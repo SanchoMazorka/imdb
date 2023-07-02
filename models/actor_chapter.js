@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      //Actor_chapter.hasMany(models.Actor);
+      //Actor_chapter.hasMany(models.Chapter);
     }
   }
   Actor_chapter.init({
@@ -19,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Actor_chapter',
+		timestamps: false
   });
   return Actor_chapter;
 };

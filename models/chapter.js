@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+			//Chapter.belongsTo(models.Season);
+			//Chapter.belongsTo(models.Director, {foreignKey: 'directorId'});
+			//Chapter.belongsToMany(models.Actor, {through: models.Actor_chapter});
     }
   }
   Chapter.init({
@@ -22,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Chapter',
+		timestamps: false
   });
   return Chapter;
 };
